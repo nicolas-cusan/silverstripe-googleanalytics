@@ -1,6 +1,6 @@
 ---
 Name: ao_googleanalytics
 ---
-SiteTree:
+SilverStripe\CMS\Model\SiteTree:
   extensions:
     - Arillo\GoogleAnalytics\Extensions\GoogleAnalytics

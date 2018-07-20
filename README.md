@@ -1,18 +1,20 @@
 # arillo/silverstripe-googleanalytics
 
-Adds google analytics tracking script to your site, if it is in production mode.
+Adds google analytics tracking script to your site, if it is in production (live) mode.
 
 ## Requirements
 
-SilverStripe ^3.0
+SilverStripe ^4.0
+
+For a SilverStripe 3.x compatible version of this module, please see the [1.x branch, or 0.x release line](https://github.com/arillo/silverstripe-googleanalytics/tree/1.x).
 
 ## Setup
 
-To make it work, you have to define `AO_GA_TRACKING_CODE` constant.
+To make it work, you have to define `AO_GA_TRACKING_CODE` environment variable.
 
-```php
-// define in _config.php or _ss_environment.php
-define('AO_GA_TRACKING_CODE', <YOUR_GA_TRACKING_CODE>);
+```
+# define in .env
+AO_GA_TRACKING_CODE="<YOUR_GA_TRACKING_CODE>"
 ```
 
 Add the following into the `<head>` section of your template:

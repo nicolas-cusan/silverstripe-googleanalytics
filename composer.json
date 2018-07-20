@@ -1,7 +1,7 @@
 {
     "name": "arillo/silverstripe-googleanalytics",
     "description": "Silverstripe Google analytics",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "homepage": "https://github.com/silverstripe-googleanalytics",
     "keywords": ["silverstripe", "google analytics"],
     "license": "MIT",
@@ -13,6 +13,14 @@
     ],
     "extra": {
         "installer-name": "googleanalytics"
+    },
+    "require": {
+        "silverstripe/framework": "^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arillo\\GoogleAnalytics\\": "src/"
+        }
     },
     "support": {
         "issues":

@@ -1,7 +1,8 @@
 <?php
 namespace Arillo\GoogleAnalytics\Extensions;
 
-use DataExtension;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Environment;
 use Director;
 
 class GoogleAnalytics extends DataExtension
@@ -9,11 +10,11 @@ class GoogleAnalytics extends DataExtension
     public function getGoogleAnalytics()
     {
         if (
-            Director::isLive() &&
-            defined('AO_GA_TRACKING_CODE')
+            Environment::getEnv('SS_ENVIRONMENT_TYPE') === 'live' &&
+            Environment::getEnv('AO_GA_TRACKING_CODE')
         ) {
             return $this->owner->customise([
-                'GoogleAnalyticsTrackingCode' => AO_GA_TRACKING_CODE
+                'GoogleAnalyticsTrackingCode' => Environment::getEnv('AO_GA_TRACKING_CODE')
             ])->renderWith('GoogleAnalytics');
         }
     }
