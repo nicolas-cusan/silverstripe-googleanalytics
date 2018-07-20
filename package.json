@@ -1,0 +1,21 @@
+{
+    "name": "arillo/silverstripe-googleanalytics",
+    "description": "Silverstripe Google analytics",
+    "type": "silverstripe-module",
+    "homepage": "https://github.com/silverstripe-googleanalytics",
+    "keywords": ["silverstripe", "google analytics"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Fischer",
+            "email": "sf@arillo.net"
+        }
+    ],
+    "extra": {
+        "installer-name": "googleanalytics"
+    },
+    "support": {
+        "issues":
+            "https://github.com/arillo/silverstripe-googleanalytics/issues"
+    }
+}
