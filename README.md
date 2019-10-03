@@ -53,3 +53,13 @@ $GoogleTagManager(body)
 #### Customize
 
 You can overwrite `GoogleTagManager.ss` on project basis, if you need some different behaviour.
+
+## Changelog
+
+1.0.0
+
+-   SS4 compat
+
+1.0.1
+
+-   added GTM
