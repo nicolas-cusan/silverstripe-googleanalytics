@@ -24,3 +24,28 @@ $GoogleAnalytics
 ## Customize
 
 You can overwrite `GoogleAnalytics.ss` on project basis, if you need some different behaviour.
+
+### Google tag manager
+
+To make it work, you have to define `AO_GTM_CODE` environment variable.
+
+```
+# define in .env
+define('AO_GTM_CODE', <YOUR_AO_GTM_CODE>);
+```
+
+Add the following into the `<head>` section of your template:
+
+```
+$GoogleTagManager(head)
+```
+
+After the opening `<body>` tag:
+
+```
+$GoogleTagManager(body)
+```
+
+#### Customize
+
+You can overwrite `GoogleTagManager.ss` on project basis, if you need some different behaviour.

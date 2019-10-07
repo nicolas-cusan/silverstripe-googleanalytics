@@ -17,4 +17,17 @@ class GoogleAnalytics extends DataExtension
             ])->renderWith('GoogleAnalytics');
         }
     }
+
+    public function GoogleTagManager($type = 'head')
+    {
+        if (
+            Director::isLive() &&
+            defined('AO_GTM_CODE')
+        ) {
+            return $this->owner->customise([
+                'GoogleTagManagerCode' => defined('AO_GTM_CODE'),
+                'GoogleTagManagerType' => $type,
+            ])->renderWith('GoogleTagManager');
+        }
+    }
 }
