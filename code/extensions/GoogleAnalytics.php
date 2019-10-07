@@ -25,7 +25,7 @@ class GoogleAnalytics extends DataExtension
             defined('AO_GTM_CODE')
         ) {
             return $this->owner->customise([
-                'GoogleTagManagerCode' => defined('AO_GTM_CODE'),
+                'GoogleTagManagerCode' => AO_GTM_CODE,
                 'GoogleTagManagerType' => $type,
             ])->renderWith('GoogleTagManager');
         }
