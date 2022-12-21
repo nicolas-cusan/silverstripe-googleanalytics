@@ -25,9 +25,26 @@ Add the following into the `<head>` section of your template:
 $GoogleAnalytics
 ```
 
+### Google analytics 4
+
+To make it work, you have to define `AO_GA4_TRACKING_CODE` environment variable.
+
+```
+# define in .env
+AO_GA_TRACKING_CODE="<AO_GA4_TRACKING_CODE>"
+```
+
+Add the following into the `<head>` section of your template:
+
+```
+$GA4
+```
+
+
+
 #### Customize
 
-You can overwrite `GoogleAnalytics.ss` on project basis, if you need some different behaviour.
+You can overwrite `GoogleAnalytics.ss` (or `GA4.ss`) on project basis, if you need some different behaviour.
 
 ### Google tag manager
 
@@ -63,3 +80,8 @@ You can overwrite `GoogleTagManager.ss` on project basis, if you need some diffe
 1.0.1
 
 -   added GTM
+
+1.0.2
+
+-   added GA4
+

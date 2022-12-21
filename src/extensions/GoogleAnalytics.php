@@ -12,22 +12,46 @@ class GoogleAnalytics extends DataExtension
             Environment::getEnv('SS_ENVIRONMENT_TYPE') === 'live' &&
             Environment::getEnv('AO_GA_TRACKING_CODE')
         ) {
-            return $this->owner->customise([
-                'GoogleAnalyticsTrackingCode' => Environment::getEnv('AO_GA_TRACKING_CODE')
-            ])->renderWith('GoogleAnalytics');
+            return $this->owner
+                ->customise([
+                    'GoogleAnalyticsTrackingCode' => Environment::getEnv(
+                        'AO_GA_TRACKING_CODE'
+                    ),
+                ])
+                ->renderWith('GoogleAnalytics');
+        }
+    }
+
+    public function getGA4()
+    {
+        if (
+            Environment::getEnv('SS_ENVIRONMENT_TYPE') === 'live' &&
+            Environment::getEnv('AO_GA4_TRACKING_CODE')
+        ) {
+            return $this->owner
+                ->customise([
+                    'GoogleAnalyticsTrackingCode' => Environment::getEnv(
+                        'AO_GA4_TRACKING_CODE'
+                    ),
+                ])
+                ->renderWith('GA4');
         }
     }
 
     public function GoogleTagManager($type = 'head')
     {
         if (
-            Environment::getEnv('SS_ENVIRONMENT_TYPE') === 'live'&&
+            Environment::getEnv('SS_ENVIRONMENT_TYPE') === 'live' &&
             Environment::getEnv('AO_GTM_CODE')
         ) {
-            return $this->owner->customise([
-                'GoogleTagManagerCode' => Environment::getEnv('AO_GTM_CODE'),
-                'GoogleTagManagerType' => $type,
-            ])->renderWith('GoogleTagManager');
+            return $this->owner
+                ->customise([
+                    'GoogleTagManagerCode' => Environment::getEnv(
+                        'AO_GTM_CODE'
+                    ),
+                    'GoogleTagManagerType' => $type,
+                ])
+                ->renderWith('GoogleTagManager');
         }
     }
 }
